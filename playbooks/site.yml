@@ -8,12 +8,7 @@
   tags:
     - always
     
-    
 
-- hosts: all
-- import_playbook: /home/ubuntu/ansible-config-artifact/static.assignments/common-del.yml
-
-
-
--host: uat-webservers
--import_playbook: /home/ubuntu/ansible-config-artifact/static.assignments/uat-webservers.yml
+-  hosts: webservers
+- name: Webserver assignment
+-import_playbook: /home/ubuntu/ansible-config-artifact/static.assignments/webservers.yml
