@@ -47,8 +47,8 @@ nginx_extra_conf_options: ""
 #     env VARIABLE;
 #     include /etc/nginx/main.d/*.conf;
 
-nginx_extra_http_options: ""
-# Example extra http options, printed inside the main server http config:
+nginx_extra_http_options: 
+ Example extra http options, printed inside the main server http config:
     nginx_extra_http_options: |
      proxy_buffering    off;
      proxy_set_header   X-Real-IP $remote_addr;
@@ -82,12 +82,17 @@ nginx_upstreams: []
  - name: myapp1
    strategy: "ip_hash" # "least_conn", etc.
    keepalive: 16 # optional
-   servers: {
-     - "172.31.94.247 weight=3"
-     - "172.31.91.35  weight=3"
+   servers: 
+     - "172.31.83.227  weight=3"
+     - "172.31.86.21   weight=3"
+     - "172.31.86.172  weight=3"
+     - "172.31.94.247  weight=3"
+     - "172.31.91.35   weight=3"
+     - "172.31.94.247  weight=3"
+     - "172.31.91.35   weight=3"
 "proxy_pass http://myapp1"
 
-   }
+   
 
 
  ansible_ssh_user= 'ec2-user'

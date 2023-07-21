@@ -1,3 +1,22 @@
+[nfs]
+172.31.85.81 
+
+[webserver 1]
+172.31.83.227 
+
+[webserver2]
+172.31.86.21
+
+[webserver3]
+172.31.86.172
+
+[database]
+172.31.81.224 
+
+loadbalancer  
+172.31.80.120 
+
+
 [uat-webservers]
-172.31.94.247 ansible_ssh_user= 'ec2-user'
-172.31.91.35  ansible_ssh_user= 'ec2-user'
+172.31.94.247 
+172.31.91.35 
