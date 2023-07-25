@@ -62,17 +62,16 @@ apache_restart_state: restarted
 apache_packages_state: present
 
 
-enable_apache_lb:false
-load_balancer_is_required:false
 
 
 # Webservers
 loadbalancer_name: "myapp1"
-web1: "172.31.83.227  weight=3"
-web2: "172.31.86.21   weight=3"
-web3: "172.31.86.172  weight=3"
-web4: "172.31.94.247  weight=3"
-web5: "172.31.91.35   weight=3"
+web1: "172.31.94.247  weight=3"
+web2: "172.31.91.35   weight=3"
+
+#*****************vars for loadbalancing status***************
+enable_apache_lb: false
+load_balancer_is_required: false
 
 
 

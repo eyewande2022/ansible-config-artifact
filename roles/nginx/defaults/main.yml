@@ -78,16 +78,13 @@ nginx_vhosts: []
 #   template: "" # Can be used to override the `nginx_vhost_template` per host.
 #   state: "absent" # To remove the vhost configuration.
 
-nginx_upstreams: []
+nginx_upstreams:
  - name: myapp1
    strategy: "ip_hash" # "least_conn", etc.
    keepalive: 16 # optional
    servers: {
-     - "web1   weight=3",
-     - "web2   weight=3",
-     - "web3   weight=3",
-     - "web4   weight=3",
-     - "web5   weight=3",
+     - "web1 weight=3",
+     - "web2 weight=3",
        "proxy_pass http://myapp1"
    }
 
@@ -100,5 +97,5 @@ nginx_log_format: |-
   '"$http_user_agent" "$http_x_forwarded_for"'
 
 
-enable_nginx_lb:false
-load_balancer_is_required:false
+enable_nginx_lb: false
+load_balancer_is_required: false

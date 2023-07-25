@@ -32,19 +32,14 @@
 
 - name : set webservers host name in /etc/hosts
 become :yes
-blockinfile:
-payth: /etc/hosts
-block: |
-{{item.ip}}  {{item.name}}  
-
+blockinfile: 
+    path: /etc/hosts
+    block: |
+      {{ item.name }} {{ item.ip }}
 
 loop:
-
-- {name:web1, ip: 172.31.83.227}
-- {name:web2, ip: 172.31.86.21 }
-- {name:web3, ip: 172.31.86.172}
-- {name:web5, ip: 172.31.94.247}
-- {name:web1, ip: 172.31.91.35 }
+- { name: web1, ip: 172.31.94.247 }
+- { name: web2, ip: 172.31.91.35 }
 
 
 # Nginx setup.
